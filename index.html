@@ -1,0 +1,85 @@
+<DOCTYPE html>
+<html lang="en" id="container3">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random-colors</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #container1 {
+            margin-left: 470px;
+            margin-top: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            width: 400px;
+            background-color: white;
+        }
+
+        #container2 {
+            margin-left: 510px;
+            margin-top: 240px;
+            height: 80px;
+            width: 300px;
+            /* background-color: gray; */
+        }
+
+        @media screen and (max-width:450px) {
+            #container2 {
+                position: relative;
+                top: -50px;
+                left: -450px;
+
+            }
+        }
+
+        #color-code {
+            font-family: cursive;
+            margin-top: 150px;
+            margin-left: 70px;
+        }
+
+        #btn123 {
+            font-size: larger;
+            font-family: cursive;
+            margin-left: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body >
+    <div id="container2">
+        <h1 id="color-code">#ffff</h1>
+        <p id="btn123">Click Anywhere</p>
+    </div>
+
+    <script>
+        const getColor = () => {
+            const randomnumber = Math.floor(Math.random() * 16777215);
+            const randoncode = "#"+randomnumber.toString(16)
+            // console.log(randomnumber, randancode)
+            document.body.style.backgroundColor = randoncode
+            document.getElementById('color-code').innerText = randoncode
+        }
+        document.getElementById('container3').addEventListener(
+            "click",
+            getColor
+        )
+
+        getColor()
+    </script>
+</body>
+
+</html>
